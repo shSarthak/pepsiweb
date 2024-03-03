@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #0062be;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px;
+        }
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: white;
+        }
+        nav a:hover{
+            text-decoration: underline;
+        }
+        .section {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding-bottom: 70px;
+        }
+        .written {
+            width: 50rem;
+            margin-left: 40px;
+        }
+        .written h1 {
+            font-size: 5rem;
+        }
+        #socials img {
+            display: flex;
+            margin-top: 30px;
+        }
+        #socials > img {
+            filter: invert(1);
+            padding-right: 20px;
+        } 
+        .section_2 {
+            max-width: 100%;
+            text-align: center;
+        }
+        .touch_images > img {
+            transition: transform 0.1s ease;
+            cursor: pointer;
+        }
+        .touch_images > img:hover {
+            transform: scale(1.1);
+        }
+        .cover_img img {
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <div class="images">
+            <img src="./logo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Products</a>
+            <a href="">What's New</a>
+            <a href="">Newsletter</a>
+            <a href="">Contact</a>
+        </nav>
+    </div>
+    <div class="section">
+        <div class="written">
+            <h1>THAT'S WHAT I LIKE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa mollitia 
+            deserunt eveniet eum esse excepturi, similique in ipsum harum voluptas 
+            porro vel. Illum id, tempore incidunt cupiditate sit quam quos laborum 
+            beatae debitis repellendus? Dolore cupiditate sequi illo blanditiis itaque.
+            </p>
+        </div>
+        <div class="cover_img">
+            <img src="./pepsi001.png" alt="" height="400px" id="coverImage">
+        </div>
+        <div id="socials">
+            <img src="./facebook.png" alt="">
+            <img src="./instagram.png" alt="">
+            <img src="./twitter.png" alt="">
+        </div>
+    </div>
+    <div class="section_2">
+        <div class="touch_images">
+            <img src="./pepsi001.png" alt="" height="100px" class="touchImage" onclick="changeCoverImage(this, 'rgba(0, 90, 153, 1)')">
+            <img src="./pepsi002.png" alt="" height="100px" class="touchImage" onclick="changeCoverImage(this, 'rgba(177, 177, 178, 1)')">
+            <img src="./pepsi003.png" alt="" height="100px" class="touchImage" onclick="changeCoverImage(this, 'rgba(32, 36, 39, 1)')"> 
+        </div>
+    </div>
+    <script>
+        function changeCoverImage(clickedImage, color) {
+            var coverImage = document.getElementById("coverImage");
+            coverImage.src = clickedImage.src;
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
